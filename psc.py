@@ -53,7 +53,6 @@ def scmrun(command,position):
         pass
     elif(command == "push"):
         if int(int(position)+1) == len(sys.argv):
-            pass
             os.system("git push")
         else:
             if int(len(sys.argv) - int(int(position)+1)) == int(2):
