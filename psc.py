@@ -22,8 +22,7 @@ def scmrun(command,position):
     if(command == "commit"):
         # psc commit <dir> "message" push
         print(int(position))
-        exit
-        if len(sys.argv) < 4:
+        if len(sys.argv) < int(position):
             exit
         else:
             directory = sys.argv[int(int(position)+1)]
@@ -53,9 +52,19 @@ def scmrun(command,position):
             os.system("git clone " + url + " -b " + branch + " " + name)
     elif(command == "pull"):
         if int(int(position)+1) == len(sys.argv):
-            print("only pull")
+            os.system("git pull")
         if int(int(position)+1) < len(sys.argv):
             print("pull then")
+            use_branch=False
+            if int(int(position)+3) == len(sys.argv):
+                remote=str(sys.argv[int(int(position)+1)])
+                branch=str(sys.argv[int(int(position)+2)])
+                os.system("git pull " + remote + " " + branch)
+            else:
+                print("ERROR: pull was not run properly")
+                print("The pull function needs to be ran independently")
+                print("Usage: psc pull [Optional: <remote> <branch>]")
+                
     elif(command == "push"):
         if int(int(position)+1) == len(sys.argv):
             os.system("git push")
