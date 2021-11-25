@@ -50,6 +50,21 @@ def scmrun(command,position):
             branch = str(sys.argv[int(int(position)+3)])
             name = str(sys.argv[int(int(position)+4)])
             os.system("git clone " + url + " -b " + branch + " " + name)
+    elif(command == "shallow-clone"):
+        # pcs shallow-clone <url> branch <branch>
+        url    = sys.argv[int(int(position)+1)]
+        if int(int(position)+2) == len(sys.argv): 
+            os.system("git clone " + url + " --depth 1")
+        elif int(int(position)+3) == len(sys.argv):
+            name = str(sys.argv[int(int(position)+3)])
+            os.system("git clone " + url + " " + name + " --depth 1")
+        elif int(int(position)+4) == len(sys.argv):
+            branch = str(sys.argv[int(int(position)+3)])
+            os.system("git clone " + url + " -b " + branch + " --depth 1")
+        else:
+            branch = str(sys.argv[int(int(position)+3)])
+            name = str(sys.argv[int(int(position)+4)])
+            os.system("git clone " + url + " -b " + branch + " " + name + " --depth 1")
     elif(command == "pull"):
         if int(int(position)+1) == len(sys.argv):
             os.system("git pull")
