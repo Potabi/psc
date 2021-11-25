@@ -21,7 +21,7 @@ def checkcommand(command,position):
 def scmrun(command,position):
     if(command == "commit"):
         # psc commit <dir> "message" push
-        print(int(position))
+        # print(int(position))
         if len(sys.argv) < int(position):
             exit
         else:
