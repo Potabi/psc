@@ -50,7 +50,10 @@ def scmrun(command,position):
             name = str(sys.argv[int(int(position)+4)])
             os.system("git clone " + url + " -b " + branch + " " + name)
     elif(command == "pull"):
-        pass
+        if int(int(position)+1) == len(sys.argv):
+            print("only pull")
+        if int(int(position)+1) < len(sys.argv):
+            print("pull then")
     elif(command == "push"):
         if int(int(position)+1) == len(sys.argv):
             os.system("git push")
