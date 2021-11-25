@@ -90,11 +90,11 @@ def scmrun(command,position):
         else:
             if str(sys.argv[int(int(position)+1)]) == str("global"):
                 os.system("git config --global user.name " + str(sys.argv[int(int(position)+2)]))
-                os.system("git config --global user.email " + str(sys.argv[int(int(position)+2)]))
+                os.system("git config --global user.email " + str(sys.argv[int(int(position)+3)]))
                 print("Success")
             elif str(sys.argv[int(int(position)+1)]) == str("local"):
                 os.system("git config user.name " + str(sys.argv[int(int(position)+2)]))
-                os.system("git config user.email " + str(sys.argv[int(int(position)+2)]))
+                os.system("git config user.email " + str(sys.argv[int(int(position)+3)]))
                 print("Success")
             else:
                 whoami_error()
