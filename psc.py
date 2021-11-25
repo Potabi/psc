@@ -36,8 +36,12 @@ def scmrun(command,position):
             checkcommand(str(sys.argv[4]),int(4))
     elif(command == "clone"):
         # pcs clone <url> branch <branch>
-        url = sys.argv[int(int(position)+1)]
-        print("git clone " + url)
+        url    = sys.argv[int(int(position)+1)]
+        if int(int(position)+2) == len(sys.argv): 
+            os.system("git clone " + url)
+        else:
+            branch = sys.argv[int(int(position)+3)]
+            os.system("git clone " + url + " -b " + branch)
     elif(command == "pull"):
         pass
     elif(command == "push"):
