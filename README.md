@@ -3,6 +3,8 @@ Potabi Source Control
 
 ### ***An SCM that makes sense***
 
+This script is still "quick and dirty" meaning it was created with a barebones, poorly optimized system that will be refined as it is needed.
+
 ### For those not familar with how SCMs work.
 Source Control Managers (SCM for short) are applications that help software engineers - especially in open-source software feilds - manage software development with multiple users.
 
