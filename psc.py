@@ -2,8 +2,8 @@
 import sys
 import os
 # If debugging is ever needed: 
-# print('Number of arguments:', len(sys.argv), 'arguments.')
-# print('Argument List:', str(sys.argv))
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', str(sys.argv))
 
 base_commands=["clone","pull","commit","push"]
 
@@ -21,7 +21,7 @@ def checkcommand(command,position):
 
 def scmrun(command,position):
     if(command == "commit"):
-        if len(sys.argv) < 4 or len(sys.argv) > 5:
+        if len(sys.argv) < 4:
             exit
         else:
             directory = sys.argv[int(int(position)+1)]
@@ -31,14 +31,22 @@ def scmrun(command,position):
             os.system("git add " + str(directory))
             os.system("git commit -m \"" + str(message) + "\"")
 
-        if len(sys.argv) == 5:
+        # If there are any other arguments
+        if len(sys.argv) >= 5:
             checkcommand(str(sys.argv[4]),int(4))
     elif(command == "clone"):
         pass
     elif(command == "pull"):
         pass
     elif(command == "push"):
-        os.system("git push")
-        
+        if int(int(position)+1) == len(sys.argv):
+            os.system("git push")
+        else:
+            if int(len(sys.argv) - int(int(position)+1)) == int(2):
+                remote = str(sys.argv[int(int(position)+1)])
+                branch = str(sys.argv[int(int(position)+2)])
+                os.system("git push " + remote + " " + branch)
+            else:
+                exit
 
 checkcommand(str(sys.argv[1]),int(1))
