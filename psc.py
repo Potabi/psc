@@ -7,7 +7,6 @@ print('Argument List:', str(sys.argv))
 
 base_commands=["clone","pull","commit","push","whoami"]
 
-# psc commit <dir> "message" push
 if len(sys.argv) < 2:
     exit
 
@@ -21,6 +20,7 @@ def checkcommand(command,position):
 
 def scmrun(command,position):
     if(command == "commit"):
+        # psc commit <dir> "message" push
         if len(sys.argv) < 4:
             exit
         else:
@@ -35,7 +35,9 @@ def scmrun(command,position):
         if len(sys.argv) >= 5:
             checkcommand(str(sys.argv[4]),int(4))
     elif(command == "clone"):
-        pass
+        # pcs clone <url> branch <branch>
+        url = sys.argv[int(int(position)+1)]
+        print("git clone " + url)
     elif(command == "pull"):
         pass
     elif(command == "push"):
