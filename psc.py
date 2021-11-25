@@ -5,7 +5,7 @@ import os
 # print('Number of arguments:', len(sys.argv), 'arguments.')
 # print('Argument List:', str(sys.argv))
 
-base_commands=["clone","pull","commit","push","whoami"]
+base_commands=["clone","shallow-clone","pull","commit","push","whoami"]
 
 if len(sys.argv) < 2:
     exit
