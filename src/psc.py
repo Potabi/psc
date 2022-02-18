@@ -23,7 +23,7 @@ if command == "commit":
         os.system(command)
     for arg in args:
         if arg == "push":
-            os.system(push())
+            os.system(push(readmod(), args))
 if command == "push":
     os.system(push(readmod(), args))
 if command == "pull":
