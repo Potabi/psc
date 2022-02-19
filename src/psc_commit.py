@@ -1,7 +1,3 @@
-# psc commit . "message" push
-# Add -> Commit -> Push
-# Needs to use psc-push seperately
-
 def commit(readmod, args):
     command_list=[]
     for commands in readmod:
