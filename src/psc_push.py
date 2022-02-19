@@ -4,5 +4,5 @@ def push(readmod, args):
             if command[0] == "push":
                 arg_list = ""
                 for arg in args:
-                    arg_list = arg + " "
+                    arg_list = arg_list + arg + " "
                 return command[1].replace("[arg]", arg_list)
