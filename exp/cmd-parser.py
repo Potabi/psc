@@ -22,7 +22,16 @@ for i in cmdparse:
         cmdparse_arg.append(i) 
 # print(cmdparse,"\n"+str(cmdparse_arg),"\n"+str(cmdparse_cmd))
 
+# cmd,arg...
+cmdparse_pos=[]
 for i in cmdparse_cmd:
+    #print(i)
     for x in cmdparse_arg:
+        if i not in cmdparse_pos:
+            cmdparse_pos.append(i)
         if x[1] > i[1]:
-            print(i,x[2])
+            if x not in cmdparse_pos[cmdparse_pos.index(i)]:
+                cmdparse_pos[cmdparse_pos.index(i)].append(x)
+            #print(i,x[2])
+
+print(cmdparse_pos)
