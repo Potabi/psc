@@ -13,4 +13,16 @@ for i in sys.argv:
     else:
         cmdparse.append(["arg",sys.argv.index(i),i])
 
-print(cmdparse)
+cmdparse_arg=[]
+cmdparse_cmd=[]
+for i in cmdparse:
+    if i[0] == "cmd":
+        cmdparse_cmd.append(i)
+    elif i[0] == "arg":
+        cmdparse_arg.append(i) 
+# print(cmdparse,"\n"+str(cmdparse_arg),"\n"+str(cmdparse_cmd))
+
+for i in cmdparse_cmd:
+    for x in cmdparse_arg:
+        if x[1] > i[1]:
+            print(i,x[2])
