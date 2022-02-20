@@ -7,12 +7,23 @@ from psc_push import push
 from psc_pull import pull
 
 parser = argparse.ArgumentParser()
-parser.add_argument('bar', nargs='+', help='bar help')
+parser.add_argument('psc_command', nargs='+', help='psc_command help')
 args = parser.parse_args()
 
 # Check commands
-for commands in readmod():
-    for command in commands:
-        print(command)
-        if args.bar[0] == command[0]:
-            print(args.bar[0])
+running=[]
+
+def is_command(cmd):
+    for commands in readmod():
+        for command in commands:
+            if cmd == command[0]:
+                return cmd
+                continue
+            else:
+                pass
+
+for arg in args.psc_command:
+    if is_command(arg):
+        running.append([args.psc_command.index(arg), is_command(arg)])
+
+print(running)
