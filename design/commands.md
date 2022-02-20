@@ -28,5 +28,5 @@ elif it is an argument:
         display help information
         ends the script
     elif there are commands in commands_to_run:
-        appends argument to sublist[2]
+        appends argument to sublist[2] of the last-appended command
 ```
