@@ -39,3 +39,5 @@ for command in commands_to_run:
         os.system(push(readmod(),command[2]))
     if command[1]  == 'clone':
         os.system(clone(readmod(),command[2]))
+    if command[1] == "pull":
+        os.system(pull(readmod(),command[2]))
