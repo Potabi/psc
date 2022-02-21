@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import argparse
 import os
 from psc_readmod import readmod 

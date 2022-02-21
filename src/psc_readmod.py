@@ -1,7 +1,7 @@
 # Default: /etc/psc
 # In-dev: ./configs/mods.psc
-mods_location = "./src/configs/mods.psc" 
-mods_directory = "./src/configs/"
+mods_location = "/etc/psc/mods.psc" 
+mods_directory = "/etc/psc/"
 mods_commands = []
 mods_file = []
 mods_functions = []
