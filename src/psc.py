@@ -11,7 +11,7 @@ parser.add_argument('psc_command', nargs='+', help='psc_command help')
 args = parser.parse_args()
 
 # Check commands
-running=[]
+commands_to_run=[]
 
 def is_command(cmd):
     for commands in readmod():
@@ -24,6 +24,14 @@ def is_command(cmd):
 
 for arg in args.psc_command:
     if is_command(arg):
-        running.append([args.psc_command.index(arg), is_command(arg)])
+        commands_to_run.append([args.psc_command.index(arg), is_command(arg),[]])
+    else:
+        if not commands_to_run:
+            parser.print_help()
+        else:
+            commands_to_run[(len(commands_to_run)-1)][2].append(arg)
 
-print(running)
+for command in commands_to_run:
+    if command[1] == 'commit':
+        for commit_command in commit(readmod(),command[2]):
+            os.system(commit_command)
