@@ -9,6 +9,8 @@ def clone(readmod, args):
 
                 arg_list = ""
                 for arg in args:
+                    if arg == "branch":
+                        arg = arg.replace("branch", "-b")
                     arg_list = arg_list + arg + " "
                 clone_command = command[1].replace("[arg]", arg_list)
                 return clone_command
