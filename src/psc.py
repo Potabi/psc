@@ -35,3 +35,5 @@ for command in commands_to_run:
     if command[1] == 'commit':
         for commit_command in commit(readmod(),command[2]):
             os.system(commit_command)
+    if command[1] == "push":
+        os.system(push(readmod(),command[2]))
