@@ -7,7 +7,7 @@ def clone(readmod, args):
                     print("Err: Too Few Arguments")
                     print("Usage: psc clone []")
 
-                arg_list = ""
+                arg_list = str()
                 for arg in args:
                     if arg == "branch":
                         arg = arg.replace("branch", "-b")
