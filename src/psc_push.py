@@ -1,6 +1,3 @@
-from distutils.spawn import spawn
-
-
 def push(readmod, args):
     for commands in readmod:
         for command in commands:
